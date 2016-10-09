@@ -1,3 +1,4 @@
-# My Awesome Book
+# Note on _Programming Elixir_
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+这是关于《Elixir 程序设计的读书笔记》，目前计划是每周都可以抽出一点时间来学习，希望可以坚持下来……
+
