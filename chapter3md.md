@@ -42,4 +42,9 @@ defmodule TextAttr do
  def second, do: @attr
 end
 ```
+ 
+## 模块名与原子
 
+模块名（大写字母开头的），实际上等同于一个原子类型，比如 `IO` 等同于 `:"Elixir.IO"`
+
+Erlang 的变量以大写字母开头，原子都是小写字母。所以要调用 Erlang 的模块，就需要用一个小写字母的原子，比如 `:io.format` 
