@@ -41,6 +41,5 @@ defmodule TextAttr do
  @attr "two"
  def second, do: @attr
 end
-
 ```
 
