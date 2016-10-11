@@ -5,13 +5,11 @@
 
 使用这种方法可以遍历每一个元素，比如一个平方函数：
 ```
-defmodule MyList do 
-def square([]), do: []z def square([ head | tail ]), do: [head * head | square(tail)]end
-
-```
 defmodule MyList do
  def square([]), do: []
  def square([ head | tail ]), do: [head * head | square(tail)]
-end
 
+ def map([], _func), do: []
+ def map([ head | tail], func), do: [func.(head) | map(tail, func)]
+end
 ```
