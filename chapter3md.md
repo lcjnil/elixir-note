@@ -22,3 +22,25 @@ defmodule TestImport do
  end
 end
 ```
+
+### Alias
+
+创建一个别名
+
+### require（后面介绍）
+
+
+## 模块属性
+
+模块具有元属性（类似于面向对面里面的类变量，静态变量），定义方法为 `@name value`，只能在最顶层设定。函数内部可以访问。并且，可以在模块顶部多次复制，甚至每次都可以不一样。但是需要把它当做元数据或者配置文件来用。
+
+```
+defmodule TextAttr do
+ @attr "one"
+ def first, do: @attr
+ @attr "two"
+ def second, do: @attr
+end
+
+```
+
