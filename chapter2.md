@@ -22,9 +22,16 @@ end
 并且可以一个函数具有多个函数体，通过模式匹配找到调用的函数体，比如：
 
 ```
-fizz_buzz = fn (0, 0, _) -> "FizzBuzz" (0, _, _) -> "Fizz" (_, 0, _) -> "Buzz" (_, _, a) -> aend
+fizz_buzz = fn
+  (0, 0, _) -> "FizzBuzz"
+  (0, _, _) -> "Fizz"
+  (_, 0, _) -> "Buzz"
+  (_, _, a) -> a
+end
 
-IO.puts fizz_buzz.(0, 0, 1)IO.puts fizz_buzz.(0, 1, 1)IO.puts fizz_buzz.(1, 0, 1)IO.puts fizz_buzz.(1, 1, "hahaha")
+IO.puts fizz_buzz.(0, 0, 1)
+IO.puts fizz_buzz.(0, 1, 1)
+IO.puts fizz_buzz.(1, 0, 1)IO.puts fizz_buzz.(1, 1, "hahaha")
 
 ```
 
@@ -69,7 +76,11 @@ def triple(n), do: (
 ## 模式匹配
 命名函数也支持多个函数体，但是需要写多个函数，看起来像是在定义多个函数。调用一个命名函数的时候，会尝试一个一个匹配。比如：
 ```
-defmodule Factorial do def of(0), do: 1 def of(n), do: n * of(n - 1)end
+defmodule Factorial do 
+  def of(0), do: 1 
+  def of(n), 
+  do: n * of(n - 1)
+end
 ```
 
 ## 哨兵
@@ -95,7 +106,9 @@ end
 
 `|>` 管道运算符，会把左边的表达式的结果，作为第一个参数传递给右边的函数调用，然后继续作为第一个参数往下传。
 ```
-(1..10) |> Enum.map(&(&1 * &1)) |> Enum.filter(&(&1 < 40))
+(1..10)
+  |> Enum.map(&(&1 * &1))
+  |> Enum.filter(&(&1 < 40))
 ```
 
 管道中，函数必须使用括号。
