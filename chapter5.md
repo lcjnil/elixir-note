@@ -59,3 +59,24 @@ IO.inspect(for person = %{ height: height } <- people, height > 1.5, do: person)
 可以模式匹配值，但是不能模式匹配键
 
 Map 可以像 List 一样使用 `|` 来进行操作，但是只能更新原有的值，不能添加新键。
+
+## Structs
+
+```elixir
+defmodule Subscriber do
+  defstruct name: "", paid: false, over_18: true
+end
+
+# 通过 $Subscriber 访问，或者生成一个新的
+s1 = %Subscriber{name: "hello"}
+# 可以通过 `.` 来访问
+IO.inspect s1.name
+```
+
+定义一个结构体只需要给一个 map 套上一个模块，相当于给 map 取了一个名字。
+
+可以在同模块封装一些方法进去（虽然感觉没有什么意义……）
+
+结构体也可以层叠，然后会有 `put_in` 和 `update_in` 这样的宏方便进行深度修改。但是这些宏都是编译器展开的，无法做到动态加载……所以可以修改第二个参数为一个原子列表，就可以用了（很无聊的设定）
+
+
