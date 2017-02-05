@@ -58,6 +58,15 @@ IO.inspect(for person = %{ height: height } <- people, height > 1.5, do: person)
 
 可以模式匹配值，但是不能模式匹配键
 
+但是可以用 `^` 来绑定一个变量来匹配键，比如：
+```
+people = %{ name: "lcj", state: 'boy', age: 22 }
+for key <- [:name, :state ] do
+  %{ ^key => value } = people
+  value
+end
+```
+
 Map 可以像 List 一样使用 `|` 来进行操作，但是只能更新原有的值，不能添加新键。
 
 ## Structs
@@ -78,3 +87,5 @@ IO.inspect s1.name
 可以在同模块封装一些方法进去（虽然感觉没有什么意义……）
 
 结构体也可以层叠，然后会有 `put_in` 和 `update_in` 这样的宏方便进行深度修改。但是这些宏都是编译器展开的，无法做到动态加载……所以可以修改第二个参数为一个原子列表，就可以用了（很无聊的设定）
+
+
