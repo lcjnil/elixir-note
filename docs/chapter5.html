@@ -57,6 +57,8 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="chapter6.html" />
+    
     
     <link rel="prev" href="chapter4.html" />
     
@@ -165,6 +167,45 @@
             
         </li>
     
+        <li class="chapter " data-level="1.7" data-path="chapter6.html">
+            
+                <a href="chapter6.html">
+            
+                    
+                    Elixir 笔记六
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="chapter7.html">
+            
+                <a href="chapter7.html">
+            
+                    
+                    Elixir 笔记七
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="chapter8.html">
+            
+                <a href="chapter8.html">
+            
+                    
+                    Elixir 笔记八
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
 
@@ -255,7 +296,13 @@ IO.inspect(<span class="hljs-keyword">for</span> person = %{ <span class="hljs-s
 <span class="hljs-comment"># &#x5C06;&#x4E00;&#x4E2A;&#x5217;&#x8868;&#x7ED9;&#x4E00;&#x4E2A; person&#xFF0C;&#x5E76;&#x8FC7;&#x6EE4;&#xFF0C;&#x8F93;&#x51FA;&#x8FC7;&#x6EE4;&#x540E;&#x7684;&#x7ED3;&#x679C;</span>
 </code></pre>
 <p>&#x53EF;&#x4EE5;&#x6A21;&#x5F0F;&#x5339;&#x914D;&#x503C;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x80FD;&#x6A21;&#x5F0F;&#x5339;&#x914D;&#x952E;</p>
-<p>Map &#x53EF;&#x4EE5;&#x50CF; List &#x4E00;&#x6837;&#x4F7F;&#x7528; <code>|</code> &#x6765;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#xFF0C;&#x4F46;&#x662F;&#x53EA;&#x80FD;&#x66F4;&#x65B0;&#x539F;&#x6709;&#x7684;&#x503C;&#xFF0C;&#x4E0D;&#x80FD;&#x6DFB;&#x52A0;&#x65B0;&#x952E;&#x3002;</p>
+<p>&#x4F46;&#x662F;&#x53EF;&#x4EE5;&#x7528; <code>^</code> &#x6765;&#x7ED1;&#x5B9A;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x6765;&#x5339;&#x914D;&#x952E;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;</p>
+<pre><code>people = %{ name: &quot;lcj&quot;, state: &apos;boy&apos;, age: 22 }
+for key &lt;- [:name, :state ] do
+  %{ ^key =&gt; value } = people
+  value
+end
+</code></pre><p>Map &#x53EF;&#x4EE5;&#x50CF; List &#x4E00;&#x6837;&#x4F7F;&#x7528; <code>|</code> &#x6765;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#xFF0C;&#x4F46;&#x662F;&#x53EA;&#x80FD;&#x66F4;&#x65B0;&#x539F;&#x6709;&#x7684;&#x503C;&#xFF0C;&#x4E0D;&#x80FD;&#x6DFB;&#x52A0;&#x65B0;&#x952E;&#x3002;</p>
 <h2 id="structs">Structs</h2>
 <pre><code class="lang-elixir"><span class="hljs-class"><span class="hljs-keyword">defmodule</span> <span class="hljs-title">Subscriber</span></span> <span class="hljs-keyword">do</span>
   defstruct <span class="hljs-symbol">name:</span> <span class="hljs-string">&quot;&quot;</span>, <span class="hljs-symbol">paid:</span> <span class="hljs-keyword">false</span>, <span class="hljs-symbol">over_18:</span> <span class="hljs-keyword">true</span>
@@ -296,10 +343,14 @@ IO.inspect s1.name
 
             
                 
-                <a href="chapter4.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Elixir 笔记四">
+                <a href="chapter4.html" class="navigation navigation-prev " aria-label="Previous page: Elixir 笔记四">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="chapter6.html" class="navigation navigation-next " aria-label="Next page: Elixir 笔记六">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -308,7 +359,7 @@ IO.inspect s1.name
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Elixir 笔记五","level":"1.6","depth":1,"previous":{"title":"Elixir 笔记四","level":"1.5","depth":1,"path":"chapter4.md","ref":"chapter4.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter5.md","mtime":"2016-12-02T13:51:39.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-09T10:05:09.141Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Elixir 笔记五","level":"1.6","depth":1,"next":{"title":"Elixir 笔记六","level":"1.7","depth":1,"path":"chapter6.md","ref":"chapter6.md","articles":[]},"previous":{"title":"Elixir 笔记四","level":"1.5","depth":1,"path":"chapter4.md","ref":"chapter4.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter5.md","mtime":"2017-02-05T06:15:34.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-02-05T09:34:10.123Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

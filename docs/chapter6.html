@@ -1,0 +1,362 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Elixir 笔记六 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="chapter7.html" />
+    
+    
+    <link rel="prev" href="chapter5.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="chapter1.html">
+            
+                <a href="chapter1.html">
+            
+                    
+                    Elixir 笔记一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="chapter2.html">
+            
+                <a href="chapter2.html">
+            
+                    
+                    Elixir 笔记二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="chapter3.html">
+            
+                <a href="chapter3.html">
+            
+                    
+                    Elixir 笔记三
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="chapter4.html">
+            
+                <a href="chapter4.html">
+            
+                    
+                    Elixir 笔记四
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="chapter5.html">
+            
+                <a href="chapter5.html">
+            
+                    
+                    Elixir 笔记五
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7" data-path="chapter6.html">
+            
+                <a href="chapter6.html">
+            
+                    
+                    Elixir 笔记六
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="chapter7.html">
+            
+                <a href="chapter7.html">
+            
+                    
+                    Elixir 笔记七
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="chapter8.html">
+            
+                <a href="chapter8.html">
+            
+                    
+                    Elixir 笔记八
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Elixir 笔记六</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="elixir-&#x7B14;&#x8BB0;&#x516D;">Elixir &#x7B14;&#x8BB0;&#x516D;</h1>
+<h2 id="enum">Enum</h2>
+<p>Enum &#x6A21;&#x5757;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x7B97;&#x6CD5;&#x6765;&#x5904;&#x7406;&#x53EF;&#x679A;&#x4E3E;&#x7684;&#x7C7B;&#x578B;&#x3002;&#x6BD4;&#x5982; <code>map</code>, <code>concat</code>, <code>filter</code> &#x7B49;&#x65B9;&#x6CD5;&#x3002;</p>
+<pre><code class="lang-elixir"><span class="hljs-class"><span class="hljs-keyword">defmodule</span> <span class="hljs-title">NewEnum</span></span> <span class="hljs-keyword">do</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">flatten</span></span>([]), <span class="hljs-symbol">do:</span> []
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">flatten</span></span>([ head | tail ]), <span class="hljs-symbol">do:</span> flatten(head) ++ flatten(tail)
+  <span class="hljs-comment"># &#x6280;&#x5DE7;&#x662F;&#xFF0C;&#x5F53;&#x4E0D;&#x80FD;&#x88AB;&#x4E0A;&#x5F0F;&#x5339;&#x914D;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E00;&#x5B9A;&#x4E0D;&#x662F; list &#x4E86;</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">flatten</span></span>(head), <span class="hljs-symbol">do:</span> [head]
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h2 id="stream">Stream</h2>
+<p>Stream &#x548C; Enum &#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x4E0D;&#x4F1A;&#x7ACB;&#x5373;&#x8BA1;&#x7B97;&#xFF0C;&#x800C;&#x662F;&#x51FA;&#x73B0;&#x6D88;&#x8D39;&#x8005;&#x7684;&#x65F6;&#x5019;&#x624D;&#x4F1A;&#x8BA1;&#x7B97;&#x3002;&#x5728;&#x7BA1;&#x9053;&#x4E2D;&#x4F20;&#x9012;&#x65F6;&#x5019;&#xFF0C;Enum &#x4F1A;&#x521B;&#x5EFA;&#x6570;&#x4E2A;&#x4E2D;&#x95F4;&#x503C;&#xFF0C;&#x4F46;&#x662F; Stream &#x4E0D;&#x4F1A;&#x3002;</p>
+<pre><code>IO.puts File.open!(&quot;/usr/share/dict/words&quot;) 
+    |&gt; IO.stream(:line) 
+    |&gt; Enum.max_by(&amp;String.length/1)
+</code></pre><ul>
+<li>Stream.cycle&#xFF0C;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;&#x53EF;&#x679A;&#x4E3E;&#x7C7B;&#x578B;&#xFF0C;&#x4E0D;&#x505C;&#x5FAA;&#x73AF;</li>
+<li>Stream.repeatedly &#x63A5;&#x53D7;&#x4E00;&#x4E2A;&#x51FD;&#x6570;</li>
+<li>Stream.iterate &#x63A5;&#x53D7;&#x521D;&#x59CB;&#x503C;&#xFF0C;&#x548C;&#x8FD4;&#x56DE;&#x4E0B;&#x4E00;&#x4E2A;&#x7684;&#x51FD;&#x6570;</li>
+<li>Stream.unfold &#x63A5;&#x53D7;&#x521D;&#x59CB;&#x503C;&#xFF0C;&#x548C;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x51FD;&#x6570;&#x5FC5;&#x987B;&#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x503C;&#x548C;&#x4E0B;&#x4E00;&#x4E2A;&#x503C;&#x7684;&#x5143;&#x7EC4;</li>
+</ul>
+<h2 id="comprehensions">Comprehensions</h2>
+<p><code>result = for generator or filter&#x2026; [, into: value ], do: expression</code></p>
+<p>generator:</p>
+<p><code>pattern &lt;- enumerable_thing</code></p>
+<p>&#x5982;&#x679C;&#x51FA;&#x73B0;&#x4E86;&#x591A;&#x4E2A; filter&#xFF0C;&#x4F1A;&#x662F;&#x4E00;&#x4E2A;&#x5168;&#x6392;&#x5217;</p>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#x4F1A;&#x8F93;&#x51FA;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x4F46;&#x662F;&#x53EF;&#x4EE5;&#x501F;&#x52A9; Collectable protocol&#xFF0C;&#x5C06;&#x6570;&#x7EC4;&#x8FDB;&#x884C;&#x8F6C;&#x6362;</p>
+<pre><code>for x &lt;- ~w{ cat dog }, into: Map.new, do: { x, String.upcase(x) }
+[{&quot;cat&quot;, &quot;CAT&quot;}, {&quot;dog&quot;, &quot;DOG&quot;}]
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="chapter5.html" class="navigation navigation-prev " aria-label="Previous page: Elixir 笔记五">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="chapter7.html" class="navigation navigation-next " aria-label="Next page: Elixir 笔记七">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Elixir 笔记六","level":"1.7","depth":1,"next":{"title":"Elixir 笔记七","level":"1.8","depth":1,"path":"chapter7.md","ref":"chapter7.md","articles":[]},"previous":{"title":"Elixir 笔记五","level":"1.6","depth":1,"path":"chapter5.md","ref":"chapter5.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter6.md","mtime":"2017-02-05T07:34:52.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-02-05T09:34:10.123Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

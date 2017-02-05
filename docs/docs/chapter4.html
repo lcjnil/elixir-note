@@ -1,0 +1,356 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Elixir 笔记四 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="chapter5.html" />
+    
+    
+    <link rel="prev" href="chapter3.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="chapter1.html">
+            
+                <a href="chapter1.html">
+            
+                    
+                    Elixir 笔记一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="chapter2.html">
+            
+                <a href="chapter2.html">
+            
+                    
+                    Elixir 笔记二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="chapter3.html">
+            
+                <a href="chapter3.html">
+            
+                    
+                    Elixir 笔记三
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5" data-path="chapter4.html">
+            
+                <a href="chapter4.html">
+            
+                    
+                    Elixir 笔记四
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="chapter5.html">
+            
+                <a href="chapter5.html">
+            
+                    
+                    Elixir 笔记五
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Elixir 笔记四</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="elixir-&#x7B14;&#x8BB0;&#x56DB;">Elixir &#x7B14;&#x8BB0;&#x56DB;</h1>
+<p><code>[1 | [2 | [ 3 | [ ] ] ] ]</code> &#x7B49;&#x4EF7;&#x4E8E; <code>[1, 2, 3]</code>&#x3002;&#x53EF;&#x4EE5;&#x628A; <code>|</code> &#x60F3;&#x8C61;&#x6210;&#x7BA1;&#x9053;&#x3002;
+<code>[head | tail] = [1, 2, 3]</code> &#x4F1A;&#x5F97;&#x5230; <code>head = 1</code> &#x548C; <code>tail = [2, 3]</code></p>
+<p>&#x4F7F;&#x7528;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x904D;&#x5386;&#x6BCF;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x6BD4;&#x5982;&#x4E00;&#x4E2A;&#x5E73;&#x65B9;&#x51FD;&#x6570;&#xFF1A;</p>
+<pre><code>defmodule MyList do
+ def square([]), do: []
+ def square([ head | tail ]), do: [head * head | square(tail)]
+
+ # &#x901A;&#x8FC7;&#x57FA;&#x672C;&#x7684;&#x904D;&#x5386;&#x5C31;&#x53EF;&#x4EE5;&#x5199;&#x51FA;&#x4E00;&#x4E2A; map &#x51FD;&#x6570;
+ def map([], _func), do: []
+ def map([ head | tail], func), do: [func.(head) | map(tail, func)]
+
+ # sum
+ def sum(list), do: _sum(list, 0)
+
+ defp _sum([], total), do: total
+ defp _sum([ head | tail], total), do: _sum(tail, total + head)
+
+ def mySum([]), do: 0
+ def mySum([head | tail]), do: head + mySum(tail)
+
+ # Reduce
+ def reduce([], value, _func), do: value
+ def reduce([ head | tail], value, func), do: reduce(tail, func.(value, head), func)
+
+ def mapSum([], _func), do: 0
+ def mapSum([ head | tail], func), do: func.(head) + mapSum(tail, func)
+
+ # Max
+ def max([]), do: 0
+ def max([head]), do: head
+ def max([ head | tail]), do: bigger(head, max(tail))
+
+ defp bigger(a, b) when a &gt; b, do: a
+ defp bigger(a, b) when a &lt;= b, do: b
+
+end
+</code></pre><h2 id="&#x5217;&#x8868;&#x7684;&#x5217;&#x8868;">&#x5217;&#x8868;&#x7684;&#x5217;&#x8868;</h2>
+<p>&#x5047;&#x8BBE;&#x4E00;&#x4E2A;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x9879;&#x90FD;&#x662F;&#x5217;&#x8868;&#xFF0C;&#x8FC7;&#x6EE4;&#x51FA;&#x7B2C;&#x4E8C;&#x9879;&#x4E3A; 27 &#x7684;&#x51FD;&#x6570;</p>
+<pre><code>defmodule Weather do
+  # test data
+  def test_data do
+    [
+        [1, 2, 3, 4],
+        [1, 27, 2, 34],
+        [2, 27, 3, 12]
+    ]
+  end
+
+  def for_location_27([]), do: []
+  def for_location_27([ [time, 27, location, rain] | tail ]) do
+   [ [time, 27, location, rain] | for_location_27(tail) ]
+  end
+  def for_location_27([ _ | tail]) do
+    for_location_27(tail)
+  end
+
+  # &#x4E0D;&#x5173;&#x5FC3;&#x5934;&#x90E8;&#x5176;&#x4ED6;&#x5B57;&#x6BB5;&#x662F;&#x4EC0;&#x4E48;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x7EE7;&#x7EED;&#x5F80;&#x4E0B;&#x5199;&#xFF1A;
+  def for_location_27_new([]), do: []
+  def for_location_27_new([ head = [ _, 27, _, _ ] | tail ]), do: [ head | for_location_27_new(tail) ]
+  def for_location_27_new([ _ | tail ]), do: for_location_27_new(tail)
+end
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="chapter3.html" class="navigation navigation-prev " aria-label="Previous page: Elixir 笔记三">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="chapter5.html" class="navigation navigation-next " aria-label="Next page: Elixir 笔记五">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Elixir 笔记四","level":"1.5","depth":1,"next":{"title":"Elixir 笔记五","level":"1.6","depth":1,"path":"chapter5.md","ref":"chapter5.md","articles":[]},"previous":{"title":"Elixir 笔记三","level":"1.4","depth":1,"path":"chapter3.md","ref":"chapter3.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter4.md","mtime":"2016-12-01T15:43:36.956Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-09T10:05:09.141Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
